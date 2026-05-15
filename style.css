@@ -1,0 +1,664 @@
+/* ========================================
+   ШРИФТЫ И БАЗОВЫЕ НАСТРОЙКИ
+   ======================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* === RESET === */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; /* Safari font stack */
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #5c5248;
+    background: #faf6f1;
+    padding: 48px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100%; /* Фикс для коротких страниц в Safari */
+}
+
+/* === MEDIA QUERIES VARIABLES (для удобства) === */
+:root {
+    --breakpoint-mobile: 768px;
+    --color-primary: #c45c3e;
+    --color-secondary: #5C6B4A;
+    --color-text: #2c2416;
+    --color-text-muted: #5c5248;
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+}
+
+/* === ОБЩИЕ СТИЛИ ЭЛЕМЕНТОВ === */
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+ul, ol { list-style: none; }
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Акцентные ссылки */
+.item-booking,
+.logo-accent,
+.intro-booking {
+    color: var(--color-primary);
+}
+
+.intro-text:hover,
+.intro-booking:hover {
+    text-decoration: underline;
+}
+
+/* Контейнер */
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* === HEADER / NAVBAR === */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.logo {
+    display: flex;
+    gap: 13px;
+    align-items: center;
+}
+
+.logo-icon { height: 37px; }
+
+.logo-text {
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--color-text);
+}
+
+.logo-accent { font-weight: 600; }
+
+.nav-menu {
+    display: flex;
+    gap: 24px;
+    font-size: 15px;
+}
+
+/* === HERO SECTION === */
+.hero {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hero-image {
+    width: 100%;
+    /* Фолбэк для Safari <16.4: сначала vh, потом dvh */
+    max-height: clamp(200px, 60vh, 500px);
+    max-height: clamp(200px, 60dvh, 500px); /* Progressive enhancement */
+    object-fit: cover;
+    border-radius: var(--radius-md);
+}
+
+.hero-title {
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 1.12;
+    color: var(--color-text);
+}
+
+.hero-desc {
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 221px;
+    height: 47px;
+    padding: 14px 28px;
+    background: var(--color-primary);
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.hero-btn:hover {
+    background: #a84a32;
+}
+
+/* === INTRO LINE === */
+.intro-text {
+    font-size: 15px;
+}
+
+/* === GALLERY / SWIPER === */
+.gallery-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0 0 32px 0;
+    text-align: center;
+}
+
+.swiper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.swiper-container {
+    margin: 0 60px;
+    overflow: hidden;
+}
+
+.swiper-slide {
+    height: auto;
+}
+
+.swiper-slide img {
+    width: 100%;
+    /* Фолбэк для dvh */
+    height: clamp(180px, 20vh, 400px);
+    height: clamp(180px, 20dvh, 400px);
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    display: block;
+}
+
+/* Стрелки слайдера */
+.swiper-button-prev,
+.swiper-button-next {
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    color: var(--color-text);
+    transition: background 0.2s ease;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    background: #f5f0e8;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+/* Пагинация */
+.swiper-pagination {
+    position: static;
+    margin-top: 24px;
+    text-align: center;
+}
+
+.swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background: #d9d9d9;
+    opacity: 1;
+    margin: 0 4px;
+    transition: background 0.2s ease;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--color-primary);
+}
+
+/* === FAQ ACCORDION === */
+.faq-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 12px;
+    text-align: start;
+}
+
+.faq-accordion {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.faq-item {
+    background: #fff;
+    border: 1px solid #e0d8ce;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 20px 24px;
+    background: transparent;
+    border: none;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-text);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: inherit;
+    transition: background 0.2s ease;
+}
+
+.faq-question:hover {
+    background: #faf6f1;
+}
+
+.faq-icon {
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--color-text-muted);
+    line-height: 1;
+    transition: transform 0.2s ease;
+    will-change: transform;
+}
+
+.faq-answer {
+    display: none;
+    padding: 12px 16px 16px;
+    background: #f3ede6;
+}
+
+.faq-answer p {
+    margin: 0;
+    font-size: 16px;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+}
+
+/* === BOOKING FORM === */
+.booking {
+    background: #fff;
+    border-radius: var(--radius-lg);
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 28px;
+}
+
+.booking-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-text);
+}
+
+.booking-desc {
+    font-size: 16px;
+    color: var(--color-text-muted);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.form-input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #d4ccc2;
+    border-radius: var(--radius-sm);
+    font-size: 16px;
+    font-family: inherit;
+    background: #faf6f1;
+    color: var(--color-text);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    &::placeholder {
+        color: #8b7d6b;
+        opacity: 1;
+    }
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(196, 92, 62, 0.1);
+}
+
+.form-input.error {
+    border-color: #e74c3c;
+}
+
+.form-error {
+    display: none;
+    font-size: 13px;
+    color: #e74c3c;
+    margin-top: 6px;
+}
+
+.form-input.error + .form-error {
+    display: block;
+}
+
+.booking-btn {
+    max-width: 280px;
+    padding: 16px 32px;
+    background: var(--color-secondary);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+    font-family: inherit;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.booking-btn:hover {
+    background: #4a5a3a;
+}
+
+.booking-btn:active {
+    transform: scale(0.98);
+}
+
+/* === SUCCESS MODAL === */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+}
+
+.modal-content {
+    position: relative;
+    z-index: 1;
+    background: #fff;
+    border: 1px solid #e0d8ce;
+    border-radius: var(--radius-md);
+    padding: 32px;
+    max-width: 480px;
+    width: 90%;
+    text-align: center;
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-title {
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--color-text);
+    margin: 0 0 16px 0;
+}
+
+.modal-text {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.5;
+    text-align: center;
+    margin: 0 0 32px 0;
+}
+
+.modal-close {
+    padding: 14px 40px;
+    background: #e8dfd4;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--color-text);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    font-family: inherit;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.modal-close:hover {
+    background: #c3b7a2;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+a:focus-visible,
+button:focus-visible,
+.faq-question:focus-visible{
+    outline: 2px solid #c45c3e;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+
+.faq-question:focus-visible {
+    outline-offset: -3px;
+}
+
+/* ========================================
+   АДАПТИВ
+   ======================================== */
+@media (max-width: 680px) {
+    /* Общие отступы */
+    body {
+        padding: 20px;
+    }
+
+    .container {
+        gap: 22px;
+    }
+
+    /* Navbar */
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+        margin-bottom: 22px;
+    }
+
+    .logo {
+        align-self: stretch;
+    }
+
+    .nav-menu {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 18px;
+        flex-wrap: wrap;
+    }
+
+    /* Hero */
+    .hero-image {
+        max-height: clamp(200px, 25vh, 250px);
+        max-height: clamp(200px, 25dvh, 250px);
+    }
+
+    /* Intro */
+    .intro-line {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    /* Gallery */
+    .gallery-swiper {
+        padding: 0;
+    }
+
+    .swiper-container {
+        margin: 0;
+    }
+
+    .swiper-slide img {
+        height: clamp(160px, 25vh, 250px);
+        height: clamp(160px, 25dvh, 250px);
+    }
+
+    /* Стрелки поверх слайдера */
+    .swiper-button-prev,
+    .swiper-button-next {
+        position: absolute;
+        width: 44px;
+        height: 44px;
+        z-index: 10;
+
+    }
+
+    .swiper-button-prev { left: 12px; }
+    .swiper-button-next { right: 12px; }
+
+    /* Пагинация */
+    .swiper-pagination {
+        margin-top: 16px;
+    }
+
+    .swiper-pagination-bullet {
+        width: 6px;
+        height: 6px;
+        margin: 0 3px;
+    }
+
+    /* FAQ */
+    .faq-title { font-size: 28px; }
+    .faq-question {
+        font-size: 16px;
+        padding: 16px 20px;
+    }
+    .faq-answer p { font-size: 15px; }
+
+    /* Booking */
+    .booking-form,
+    .form{
+        gap: 14px;
+    }
+    .booking-title {
+        font-size: 20px;
+    }
+    .booking-desc{
+        font-size: 13px;
+    }
+
+    .form-input {
+        padding: 12px 14px;
+        font-size: 15px;
+    }
+
+    .booking-btn {
+        max-width: 137px;
+    }
+
+    /* Modal */
+    .modal-content {
+        padding: 40px 24px;
+        width: 95%;
+    }
+
+    .modal-title {
+        font-size: 24px;
+    }
+
+    .modal-text {
+        font-size: 15px;
+    }
+}
+
+/* ========================================
+   ДОПОЛНИТЕЛЬНЫЕ ФИКСЫ ДЛЯ SAFARI
+   ======================================== */
+
+@supports (-webkit-touch-callout: none) {
+    .modal {
+        height: -webkit-fill-available;
+    }
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+button[type="submit"] {
+    -webkit-appearance: none;
+}
+
+@supports not (scroll-behavior: smooth) {
+    html {
+        scroll-behavior: auto;
+    }
+}
