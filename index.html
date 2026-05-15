@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="style.css">
+    <title>Уютная кухня</title>
+</head>
+<body>
+    <header>
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <svg class="logo-icon"  viewBox="0 0 32 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5.59998 28.4279C4.26664 23.2461 4.26664 18.0643 5.59998 12.8826C6.93331 8.73716 6.93331 5.10993 5.59998 2.00087M15.6 28.4279C14.2666 21.1734 14.2666 14.9553 15.6 9.77352C16.9333 5.6281 16.9333 2.51904 15.6 0.446335M25.6 28.4279C26.9333 23.2461 26.9333 18.0643 25.6 12.8826C24.2666 8.73716 24.2666 5.10993 25.6 2.00087" stroke="#6B7560" stroke-width="1.65" />
+                        <ellipse cx="15.6" cy="37.7551" rx="14" ry="7.46175" fill="#FAF6F1" />
+                        <ellipse cx="15.6" cy="29.1252" rx="15" ry="7.77265" fill="#D9D9D9" stroke="#A84A32" stroke-width="1.2" />
+                        <ellipse opacity="0.2" cx="8.59998" cy="41.7305" rx="4" ry="3.88633" fill="white" />
+                    </svg>
+                    <span class="logo-text">Уютная <span class="logo-accent">кухня</span></span>
+                </a>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Меню</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#booking" class="nav-link item-booking">К бронированию</a>
+                    </li>
+
+                </ul>
+            </nav>
+
+
+    </header>
+    <main>
+        <div class="container">
+
+            <section class="hero">
+                <picture class="hero-picture">
+                    <source media="(max-width: 680px)" srcset="Resources/img/heroimageM.jpg">
+
+                    <img
+                            class="hero-image"
+                            src="Resources/img/heroImg.jpg"
+                            alt="Интерьер кафе Уютная кухня"
+                            loading="eager"
+                    >
+                </picture>
+                <h1 class="hero-title">Домашняя кухня в центре города</h1>
+                <p class="hero-desc">Бронируйте стол онлайн — мы подготовим всё к вашему приходу.</p>
+                <a href="#booking" class="hero-btn">Забронировать стол</a>
+
+            </section>
+            <section class="intro-line">
+                <a class="intro-text" href="#booking">
+                    Нравится атмосфера?</a>
+                <a class="intro-booking" href="#booking">перейти к форме бронирования</a>
+
+            </section>
+            <section class="gallery">
+                <div class="swiper ">
+                    <div class="swiper-container gallery-swiper">
+                        <div class="swiper-wrapper">
+                            <!-- 9 Слайдов -->
+                            <div class="swiper-slide"><img src="Resources/img/slaider1.jpg" alt="Блюдо 1"></div>
+                            <div class="swiper-slide"><img src="Resources/img/slaider2.jpg" alt="Блюдо 2"></div>
+                            <div class="swiper-slide"><img src="Resources/img/slaider3.jpg" alt="Блюдо 3"></div>
+                            <div class="swiper-slide"><img src="Resources/img/slaider4.jpg" alt="Блюдо 4"></div>
+                            <div class="swiper-slide"><img src="Resources/img/slaider5.jpg" alt="Блюдо 5"></div>
+                            <div class="swiper-slide"><img src="Resources/img/slaider6.jpg" alt="Блюдо 6"></div>
+                            <div class="swiper-slide"><img src="Resources/img/slaider7.jpg" alt="Блюдо 7"></div>
+                            <div class="swiper-slide"><img src="Resources/img/slaider8.jpg" alt="Блюдо 8"></div>
+                            <div class="swiper-slide"><img src="Resources/img/slaider9.jpg" alt="Блюдо 9"></div>
+                        </div>
+                    </div>
+
+                    <!-- Стрелки -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+
+
+                </div>
+                <!-- Точки -->
+                <div class="swiper-pagination"></div>
+            </section>
+            <section class="faq">
+                <h2 class="faq-title">Частые вопросы</h2>
+
+                <div class="faq-accordion">
+                    <div class="faq-item active">
+                        <button class="faq-question">
+                            Часы работы
+                            <span class="faq-icon">−</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Пн–Чт 10:00–22:00 · Пт–Сб 10:00–23:00 · Вс 11:00–21:00</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Как добраться
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>м. Тверская, 5 минут пешком. Вход со двора, домофон 42.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Детям и особые пожелания
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Детское меню и стульчики. Сообщите об аллергиях в форме бронирования.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Форма бронирования -->
+            <section id="booking" class="booking">
+                <div class="booking-form">
+                    <h2 class="booking-title">Бронирование стола</h2>
+                    <p class="booking-desc">Заполните поля — перезвоним для подтверждения.</p>
+
+                    <form class="form" id="bookingForm" novalidate>
+                        <div class="form-group">
+                            <label for="firstName" class="form-label">Имя</label>
+                            <input
+                                    type="text"
+                                    id="firstName"
+                                    name="firstName"
+                                    class="form-input"
+                                    placeholder="Введите имя"
+                                    required
+                            >
+                            <span class="form-error">Пожалуйста, введите имя</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastName" class="form-label">Фамилия</label>
+                            <input
+                                    type="text"
+                                    id="lastName"
+                                    name="lastName"
+                                    class="form-input"
+                                    placeholder="Введите фамилию"
+                                    required
+                            >
+                            <span class="form-error">Пожалуйста, введите фамилию</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    class="form-input"
+                                    placeholder="example@mail.ru"
+                                    required
+                            >
+                            <span class="form-error">Введите корректный email</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Телефон</label>
+                            <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    class="form-input"
+                                    placeholder="+7 (___) ___-__-__"
+                                    required
+                            >
+                            <span class="form-error">Введите номер телефона</span>
+                        </div>
+
+                        <button type="submit" class="booking-btn">Отправить</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Попап успеха -->
+            <div class="modal" id="successModal">
+                <div class="modal-overlay"></div>
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <h3 class="modal-title">Заявка отправлена</h3>
+                        <p class="modal-text">
+                            Спасибо! Мы свяжемся с Вами в ближайшее время для подтверждения брони.
+                        </p>
+                        <button class="modal-close" id="modalCloseBtn">Закрыть</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./script.js"></script>
+
+</body>
+</html>
